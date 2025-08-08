@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Bubbles 💖</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #ff69b4;
+    }
+
+    p {
+      color: #d63384;
+      font-size: 1.2rem;
+    }
+
+    .bubble {
+      width: 80px;
+      height: 80px;
+      background: #ffc1cc;
+      border-radius: 50%;
+      display: inline-block;
+      line-height: 80px;
+      font-size: 24px;
+      margin: 20px;
+      cursor: pointer;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    #messageBox {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #d63384;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Mood Bubbles ✨</h1>
+  <p>Click a bubble to feel better! 🎈</p>
+
+  <div class="bubble" onclick="showMessage()">💬</div>
+  <div class="bubble" onclick="showMessage()">🌈</div>
+  <div class="bubble" onclick="showMessage()">✨</div>
+
+  <div id="messageBox"></div>
+
+  <script>
+    const messages = [
+      "You're doing great! 🌟",
+      "Take a deep breath. 💨",
+      "You are loved. 💖",
+      "Keep going! You're amazing. 💪",
+      "Smile! 😊"
+    ];
+
+    function showMessage() {
+      const box = document.getElementById("messageBox");
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      box.innerText = msg;
+    }
+  </script>
+</body>
+</html>
