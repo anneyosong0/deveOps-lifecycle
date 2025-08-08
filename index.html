@@ -2,75 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mood Bubbles 💖</title>
+  <title>🌸 DevOps Lifecycle</title>
   <style>
     body {
       background: #fff0f5;
-      font-family: 'Comic Sans MS', cursive;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 30px;
       text-align: center;
-      padding-top: 100px;
     }
 
     h1 {
       color: #ff69b4;
+      font-size: 2.5rem;
     }
 
-    p {
-      color: #d63384;
-      font-size: 1.2rem;
-    }
-
-    .bubble {
-      width: 80px;
-      height: 80px;
-      background: #ffc1cc;
-      border-radius: 50%;
-      display: inline-block;
-      line-height: 80px;
-      font-size: 24px;
-      margin: 20px;
-      cursor: pointer;
-      animation: float 4s ease-in-out infinite;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    @keyframes float {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
-    }
-
-    #messageBox {
+    .cycle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       margin-top: 30px;
-      font-size: 18px;
+      gap: 20px;
+    }
+
+    .stage {
+      background: #ffe6f0;
+      padding: 20px;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .stage:hover {
+      transform: scale(1.1);
+    }
+
+    .stage span {
+      font-size: 1.5rem;
+    }
+
+    .stage small {
+      font-size: 0.8rem;
       color: #d63384;
+      margin-top: 6px;
+    }
+
+    .explanations {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .explanations p {
+      background: #fce4ec;
+      padding: 12px;
+      border-left: 4px solid #ff69b4;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>✨ Mood Bubbles ✨</h1>
-  <p>Click a bubble to feel better! 🎈</p>
+  <h1>🌼 DevOps Lifecycle 🌼</h1>
 
-  <div class="bubble" onclick="showMessage()">💬</div>
-  <div class="bubble" onclick="showMessage()">🌈</div>
-  <div class="bubble" onclick="showMessage()">✨</div>
+  <div class="cycle">
+    <div class="stage"><span>📝</span><small>Plan</small></div>
+    <div class="stage"><span>💻</span><small>Develop</small></div>
+    <div class="stage"><span>🏗️</span><small>Build</small></div>
+    <div class="stage"><span>🔍</span><small>Test</small></div>
+    <div class="stage"><span>📦</span><small>Release</small></div>
+    <div class="stage"><span>🚀</span><small>Deploy</small></div>
+    <div class="stage"><span>⚙️</span><small>Operate</small></div>
+    <div class="stage"><span>📊</span><small>Monitor</small></div>
+  </div>
 
-  <div id="messageBox"></div>
+  <div class="explanations">
+    <p><strong>Plan:</strong> Define goals, gather requirements, and design workflows.</p>
+    <p><strong>Develop:</strong> Write clean code and manage it using version control.</p>
+    <p><strong>Build:</strong> Compile code and generate executable packages.</p>
+    <p><strong>Test:</strong> Run automated/manual tests to ensure everything works.</p>
+    <p><strong>Release:</strong> Prepare the application for production release.</p>
+    <p><strong>Deploy:</strong> Launch the application to the live environment.</p>
+    <p><strong>Operate:</strong> Keep systems running smoothly and efficiently.</p>
+    <p><strong>Monitor:</strong> Track performance and catch issues early.</p>
+  </div>
 
-  <script>
-    const messages = [
-      "You're doing great! 🌟",
-      "Take a deep breath. 💨",
-      "You are loved. 💖",
-      "Keep going! You're amazing. 💪",
-      "Smile! 😊"
-    ];
-
-    function showMessage() {
-      const box = document.getElementById("messageBox");
-      const msg = messages[Math.floor(Math.random() * messages.length)];
-      box.innerText = msg;
-    }
-  </script>
+  <footer>
+    © 2025 • Cute DevOps Diagram | Experiment 12 💖
+  </footer>
 </body>
 </html>
